@@ -195,8 +195,10 @@ Personalizá tu paquete o elegí uno de los ya armados
 
 <h3>🤍Obelisco</h3>
 
-<p>El símbolo más famoso de Buenos Aires.</p>
-
+<p id="descObelisco">
+El símbolo más famoso de Buenos Aires.
+</p>
+  
 <div class="precio">USD 40</div>
 
 <button onclick="agregar('Obelisco',40)">
@@ -629,6 +631,8 @@ document.getElementById("txtPresupuesto").textContent =
 textos[idioma].presupuesto;
 
 }
+document.getElementById("descObelisco").textContent =
+textos[idioma].obelisco;
 </script>
 
 </body>
