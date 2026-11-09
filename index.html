@@ -157,14 +157,24 @@ margin-bottom:40px;
 
 <h1>FANTRIP</h1>
 
-<p>
+<p id="subtitulo">
 Personalizá tu paquete o elegí uno de los ya armados
 </p>
 
-<select class="idioma">
-<option>Español</option>
-<option>English</option>
-<option>Português</option>
+<select class="idioma" onchange="cambiarIdioma(this.value)">
+
+<option value="es">🇦🇷 Español</option>
+
+<option value="en">🇺🇸 English</option>
+
+<option value="pt">🇧🇷 Português</option>
+
+<option value="fr">🇫🇷 Français</option>
+
+<option value="it">🇮🇹 Italiano</option>
+
+<option value="zh">🇨🇳 中文</option>
+
 </select>
 
 </header>
@@ -175,8 +185,8 @@ Personalizá tu paquete o elegí uno de los ya armados
 
 <section class="seccion">
 
-<h2>🌎 Destinos Personalizados</h2>
-
+<h2 id="txtDestinos">🌎 Destinos Personalizados</h2>
+  
 <div class="cards">
 
 <div class="card">
@@ -327,8 +337,8 @@ Agregar
 </section>
 <section class="seccion">
 
-<h2>🎁 Paquetes Destacados</h2>
-
+<h2 id="txtPaquetes">🎁 Paquetes Destacados</h2>
+  
 <div class="cards">
 
 <div class="card">
@@ -393,8 +403,8 @@ Seleccionar paquete
 
 <div class="carrito">
 
-<h2>🛒 Tu Carrito</h2>
-
+<h2 id="txtCarrito">🛒 Tu Carrito</h2>
+  
 <ul id="listaCarrito">
 </ul>
 
@@ -414,8 +424,8 @@ Solicitar Presupuesto
 
 <section class="formulario" id="formulario">
 
-<h2>📋 Solicitar Presupuesto</h2>
-
+<h2 id="txtPresupuesto">📋 Solicitar Presupuesto</h2>
+  
 <label>Experiencia seleccionada</label>
 
 <input
@@ -549,7 +559,76 @@ behavior:"smooth"
 });
 
 }
+function cambiarIdioma(idioma){
 
+const textos = {
+
+es:{
+subtitulo:"Personalizá tu paquete o elegí uno de los ya armados",
+destinos:"🌎 Destinos Personalizados",
+paquetes:"🎁 Paquetes Destacados",
+carrito:"🛒 Tu Carrito",
+presupuesto:"📋 Solicitar Presupuesto"
+},
+
+en:{
+subtitulo:"Customize your package or choose one of our ready-made options",
+destinos:"🌎 Custom Destinations",
+paquetes:"🎁 Featured Packages",
+carrito:"🛒 Your Cart",
+presupuesto:"📋 Request a Quote"
+},
+
+pt:{
+subtitulo:"Personalize seu pacote ou escolha uma das opções prontas",
+destinos:"🌎 Destinos Personalizados",
+paquetes:"🎁 Pacotes em Destaque",
+carrito:"🛒 Seu Carrinho",
+presupuesto:"📋 Solicitar Orçamento"
+},
+
+fr:{
+subtitulo:"Personnalisez votre forfait ou choisissez une offre prête à l'emploi",
+destinos:"🌎 Destinations Personnalisées",
+paquetes:"🎁 Offres Vedettes",
+carrito:"🛒 Votre Panier",
+presupuesto:"📋 Demander un Devis"
+},
+
+it:{
+subtitulo:"Personalizza il tuo pacchetto oppure scegli una delle opzioni già pronte",
+destinos:"🌎 Destinazioni Personalizzate",
+paquetes:"🎁 Pacchetti Speciali",
+carrito:"🛒 Il Tuo Carrello",
+presupuesto:"📋 Richiedi un Preventivo"
+},
+
+zh:{
+subtitulo:"定制您的旅行套餐或选择我们的现成方案",
+destinos:"🌎 个性化目的地",
+paquetes:"🎁 精选套餐",
+carrito:"🛒 您的购物车",
+presupuesto:"📋 申请报价"
+}
+
+};
+
+document.getElementById("subtitulo").textContent =
+textos[idioma].subtitulo;
+
+document.getElementById("txtDestinos").textContent =
+textos[idioma].destinos;
+
+document.getElementById("txtPaquetes").textContent =
+textos[idioma].paquetes;
+
+document.getElementById("txtCarrito").textContent =
+textos[idioma].carrito;
+
+document.getElementById("txtPresupuesto").textContent =
+textos[idioma].presupuesto;
+
+}
 </script>
 
 </body>
