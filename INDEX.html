@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FanTrip</title>
+
+<style>
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+}
+.card{
+background:#1c1c1c;
+padding:20px;
+border-radius:10px;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+header{
+background:linear-gradient(135deg,#ff7b00,#ffb347,#3b82f6);
+padding:40px;
+text-align:center;
+}
+
+header h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+header p{
+font-size:1.1rem;
+}
+
+.idioma{
+margin-top:20px;
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+.container{
+display:flex;
+gap:20px;
+padding:20px;
+}
+
+.contenido{
+width:75%;
+}
+
+.carrito{
+width:25%;
+background:#1c1c1c;
+padding:20px;
+border-radius:10px;
+height:max-content;
+position:sticky;
+top:20px;
+}
+
+h2{
+margin-bottom:20px;
+color:#74acdf;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1c1c1c;
+padding:20px;
+border-radius:10px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.precio{
+color:#00ff88;
+font-weight:bold;
+margin:10px 0;
+font-size:1.1rem;
+}
+
+button{
+background:#009c3b;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#00b347;
+}
+
+ul{
+list-style:none;
+}
+
+.total{
+margin-top:20px;
+font-size:1.2rem;
+color:#00ff88;
+}
+
+.formulario{
+background:#1c1c1c;
+margin:20px;
+padding:30px;
+border-radius:10px;
+}
+
+.formulario input,
+.formulario select{
+width:100%;
+padding:12px;
+margin-top:5px;
+margin-bottom:15px;
+border:none;
+border-radius:5px;
+}
+
+.seccion{
+margin-bottom:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>FANTRIP</h1>
+
+<p>
+Personalizá tu paquete o elegí uno de los ya armados
+</p>
+
+<select class="idioma">
+<option>Español</option>
+<option>English</option>
+<option>Português</option>
+</select>
+
+</header>
+
+<div class="container">
+
+<div class="contenido">
+
+<section class="seccion">
+
+<h2>🌎 Destinos Personalizados</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src= "obelisco.jpg" alt="Obelisco">
+
+<h3>🤍 Obelisco</h3>
+
+<p>El símbolo más famoso de Buenos Aires.</p>
+
+<div class="precio">USD 40</div>
+
+<button onclick="agregar('Obelisco',40)">
+Agregar
+</button>
+
+<div class="card">
+
+<img src="monumental.jpg" alt="Monumental">
+
+<h3>❤️🤍 Monumental</h3>
+
+<p>Estadio de River Plate.</p>
+
+<div class="precio">USD 75</div>
+
+<button onclick="agregar('Monumental',75)">
+Agregar
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="la bombonera.jpg" alt="La Bombonera">
+
+<h3>💙 La Bombonera</h3>
+
+<p>
+Descubre uno de los estadios más emblemáticos y apasionantes del fútbol mundial.
+</p>
+
+<div class="precio">USD 80</div>
+
+<button onclick="agregar('La Bombonera',80)">
+Agregar
+</button>
+
+</div>
+<div class="card">
+
+<img src="la boca.jpg" alt="La Boca">
+
+<h3>🎨 La Boca</h3>
+
+<p>Barrio histórico lleno de color y pasión.</p>
+
+<div class="precio">USD 50</div>
+
+<button onclick="agregar('La Boca',50)">
+Agregar
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="messi.jpg" alt="Ruta de Messi">
+
+<h3>🐐 Casa de Messi</h3>
+
+<p>Recorrido por Rosario.</p>
+
+<div class="precio">USD 120</div>
+
+<button onclick="agregar('Casa de Messi',120)">
+Agregar
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="casa rosada.jpg" alt="Museo Casa Rosada">
+
+<h3>🏛 Museo Casa Rosada</h3>
+
+<p>
+Descubre la historia política argentina y uno de los edificios más emblemáticos del país.
+</p>
+
+<div class="precio">USD 45</div>
+
+<button onclick="agregar('Museo Casa Rosada',45)">
+Agregar
+</button>
+
+</div>
+<div class="card">
+
+<img src="museo.jpg" alt="Museo de la Inmigración">
+
+<h3>🚢 Museo de la Inmigración</h3>
+
+<p>
+Recorre la historia de los inmigrantes que ayudaron a construir la identidad argentina.
+</p>
+
+<div class="precio">USD 35</div>
+
+<button onclick="agregar('Museo de la Inmigración',35)">
+Agregar
+</button>
+
+</div>
+<div class="card">
+
+<img src="bodegon.jpg" alt="Bodegón Temático del Fútbol">
+
+<h3>🍽 Bodegón Temático del Fútbol</h3>
+
+<p>Gastronomía y pasión futbolera en un ambiente único.</p>
+
+<div class="precio">USD 60</div>
+
+<button onclick="agregar('Bodegón Temático',60)">
+Agregar
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="messi cancha.jpg" alt="Newells Old Boys">
+
+<h3>⚫🔴 Newell's Old Boys</h3>
+
+<p>Club donde dio sus primeros pasos Lionel Messi.</p>
+
+<div class="precio">USD 70</div>
+
+<button onclick="agregar('Newells Old Boys',70)">
+Agregar
+</button>
+
+</div>
+
+</section>
+<section class="seccion">
+
+<h2>🎁 Paquetes Destacados</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🇦🇷 Pasión Argentina</h3>
+
+<p>
+Cultura argentina asegurada, tradiciones, gastronomía,
+barrios históricos, fútbol y hockey sobre pasto.
+</p>
+
+<div class="precio">
+USD 450
+</div>
+
+<button onclick="seleccionarPaquete('Pasión Argentina',450)">
+Seleccionar paquete
+</button>
+
+</div>
+
+<div class="card">
+<h3>🐐 La Ruta de Messi</h3>
+
+<p>
+Desde la casa de Messi en Rosario hasta
+Newell's Old Boys y los murales dedicados al capitán.
+</p>
+
+<div class="precio">
+USD 380
+</div>
+
+<button onclick="seleccionarPaquete('La Ruta de Messi',380)">
+Seleccionar paquete
+</button>
+
+</div>
+
+<div class="card">
+<h3>⚽ River y Boca</h3>
+
+<p>
+Visita a La Bombonera, Monumental y al
+barrio de La Boca para vivir el superclásico.
+</p>
+
+<div class="precio">
+USD 300
+</div>
+
+<button onclick="seleccionarPaquete('River y Boca',300)">
+Seleccionar paquete
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<div class="carrito">
+
+<h2>🛒 Tu Carrito</h2>
+
+<ul id="listaCarrito">
+</ul>
+
+<div class="total">
+Total: USD <span id="total">0</span>
+</div>
+
+<br>
+
+<button onclick="irFormulario()">
+Solicitar Presupuesto
+</button>
+
+</div>
+
+</div>
+
+<section class="formulario" id="formulario">
+
+<h2>📋 Solicitar Presupuesto</h2>
+
+<label>Experiencia seleccionada</label>
+
+<input
+type="text"
+id="destinoSeleccionado"
+readonly
+>
+
+<label>Nombre completo</label>
+
+<input
+type="text"
+placeholder="Ingrese su nombre"
+>
+
+<label>Correo electrónico</label>
+
+<input
+type="email"
+placeholder="ejemplo@email.com"
+>
+
+<label>Cantidad de pasajeros</label>
+
+<input
+type="number"
+min="1"
+placeholder="Cantidad"
+>
+
+<label>Fecha del viaje</label>
+
+<input
+type="date"
+>
+
+<label>Método de pago</label>
+
+<select>
+
+<option>
+Tarjeta de Crédito
+</option>
+
+<option>
+Tarjeta de Débito
+</option>
+
+</select>
+
+<button>
+ENVIAR SOLICITUD
+</button>
+
+</section>
+<script>
+
+let total = 0;
+let paqueteSeleccionado = false;
+
+function agregar(nombre, precio){
+
+if(paqueteSeleccionado){
+alert("Ya seleccionaste un paquete. No puedes agregar destinos adicionales.");
+return;
+}
+
+const lista = document.getElementById("listaCarrito");
+
+const item = document.createElement("li");
+
+item.innerHTML = `
+${nombre} - USD ${precio}
+`;
+
+lista.appendChild(item);
+
+total += precio;
+
+document.getElementById("total").textContent = total;
+
+const destino = document.getElementById("destinoSeleccionado");
+
+if(destino.value === ""){
+destino.value = nombre;
+}else{
+destino.value += ", " + nombre;
+}
+
+}
+
+function seleccionarPaquete(nombre, precio){
+
+paqueteSeleccionado = true;
+
+const lista = document.getElementById("listaCarrito");
+
+lista.innerHTML = "";
+
+const item = document.createElement("li");
+
+item.innerHTML = `
+<strong>${nombre}</strong><br>
+USD ${precio}
+`;
+
+lista.appendChild(item);
+
+total = precio;
+
+document.getElementById("total").textContent = total;
+
+document.getElementById("destinoSeleccionado").value = nombre;
+
+document.getElementById("formulario").scrollIntoView({
+behavior:"smooth"
+});
+
+alert(
+"Has seleccionado el paquete '" +
+nombre +
+"'. Ya no podrás agregar destinos individuales."
+);
+
+}
+
+function irFormulario(){
+
+document.getElementById("formulario").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
